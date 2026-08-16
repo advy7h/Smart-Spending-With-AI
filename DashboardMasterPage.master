@@ -1,0 +1,136 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="DashboardMasterPage.master.cs" Inherits="DashboardMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+   <title>Smart Finance Manager</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        .header {
+            background: linear-gradient(to right, #0984e3, #6c5ce7);
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .sidebar {
+            width: 240px;
+            background: #2d3436;
+            position: fixed;
+            top: 60px;
+            bottom: 0;
+            left: 0;
+            overflow-y: auto;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px 25px;
+            text-decoration: none;
+            color: #dfe6e9;
+            border-bottom: 1px solid #3d3d3d;
+        }
+
+        .sidebar a i {
+            margin-right: 10px;
+        }
+
+        .sidebar a:hover {
+            background: #0984e3;
+            color: white;
+        }
+
+        .content {
+            margin-left: 240px;
+            padding: 90px 30px 30px 30px;
+        }
+
+        .logout {
+            background: white;
+            color: #0984e3;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .footer {
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+
+        <!-- Header -->
+        <div class="header">
+            <div class="logo"><i class="fa fa-wallet"></i> Smart Spending with AI</div>
+            <asp:Button ID="btnLogout" runat="server" CssClass="logout" Text="Logout" OnClick="btnLogout_Click" />
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <a href="UserDashboard.aspx"><i class="fa fa-chart-line"></i> Dashboard</a>
+            <a href="AddIncome.aspx"><i class="fa fa-plus-circle"></i> Add Income</a>
+            <a href="AddExpense.aspx"><i class="fa fa-receipt"></i> Add Expense</a>
+            <a href="ViewExpenses.aspx"><i class="fa fa-receipt"></i> View Expense</a>
+            <a href="BudgetSetup.aspx"><i class="fa fa-wallet"></i> Budget Setup</a>
+             <a href="SavingsPlanner.aspx"><i class="fa fa-file-alt"></i> Planner</a>
+            <a href="AIBudgetSuggestions.aspx"><i class="fa fa-robot"></i> AI Advice</a>
+            <a href="Reports.aspx"><i class="fa fa-file-alt"></i> Reports</a>
+            <a href="DatabaseAnalytics.aspx"><i class="fa fa-file-alt"></i> Analysis</a>
+             <a href="DeepLearningPrediction.aspx"><i class="fa fa-file-alt"></i> Prediction</a>
+             <a href="MonthlyExpenseAnalysis.aspx"><i class="fa fa-file-alt"></i> Expense Analysis</a>
+             <a href="MonthlyReport.aspx"><i class="fa fa-file-alt"></i> Monthly Report</a>
+             <a href="SmartGoals.aspx"><i class="fa fa-file-alt"></i> Goals</a>
+             <a href="UserStockAnalysis.aspx"><i class="fa fa-file-alt"></i> Stock Prediction</a>
+             <a href="UserChatBot1.aspx"><i class="fa fa-file-alt"></i> ChatBot</a>
+            <a href="UserSendMessge.aspx"><i class="fa fa-file-alt"></i> Send Message</a>
+            <a href="UserViewMessage.aspx"><i class="fa fa-file-alt"></i> View Message</a>
+            <a href="UserProfile.aspx"><i class="fa fa-user"></i> Profile</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <div class="footer">
+            © 2025 Smart Finance Manager. All Rights Reserved.
+        </div>
+
+    </form>
+</body>
+</html>
